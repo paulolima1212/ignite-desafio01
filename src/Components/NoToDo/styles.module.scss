@@ -1,0 +1,37 @@
+@use '../../Styles/colors.scss' as c;
+
+.beforenotodo {
+  background: c.$gray-500;
+  width: 39.875rem;
+  height: 15.25rem;
+  border-radius: 8px;
+}
+
+.notodo {
+  width: 39.875rem;
+  height: 15.25rem;
+  background: c.$gray-600;
+  border-radius: 8px;
+  margin-top: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  & > p {
+    font-size: 1rem;
+    color: c.$gray-300;
+    font-weight: bold;
+  }
+
+  & > span {
+    font-size: 0.875rem;
+    color: c.$gray-300;
+  }
+}
