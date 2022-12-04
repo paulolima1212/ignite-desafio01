@@ -19,7 +19,7 @@
     color: c.$gray-100;
     font-size: 0.875rem;
     font-weight: bold;
-
+    line-height: 1.4;
     svg {
       margin-left: 0.5rem;
     }
@@ -39,4 +39,9 @@
   outline: none;
   border: solid 1px c.$gray-700;
   color: c.$gray-100;
+
+  &:hover,
+  &:focus {
+    border: solid 1px c.$purple-200;
+  }
 }

@@ -1,0 +1,8 @@
+@use '../../Styles/colors.scss' as c;
+
+.infotodo {
+  width: 46rem;
+  border-bottom: solid 1px c.$gray-300;
+  display: flex;
+  justify-content: space-between;
+}
