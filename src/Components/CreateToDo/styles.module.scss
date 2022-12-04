@@ -1,0 +1,42 @@
+@use '../../Styles/colors.scss' as c;
+
+.formtodo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  & > button[type='submit'] {
+    border: none;
+    border-radius: 8px;
+    background: c.$blue-600;
+    height: 3.275rem;
+    padding: 0 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: c.$gray-100;
+    font-size: 0.875rem;
+    font-weight: bold;
+
+    svg {
+      margin-left: 0.5rem;
+    }
+
+    &:hover {
+      background: c.$blue-200;
+    }
+  }
+}
+
+.inputtodo {
+  width: 38.875rem;
+  height: 3.375rem;
+  padding: 1rem;
+  background: c.$gray-500;
+  border-radius: 8px;
+  outline: none;
+  border: solid 1px c.$gray-700;
+  color: c.$gray-100;
+}
