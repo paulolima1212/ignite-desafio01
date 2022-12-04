@@ -1,0 +1,50 @@
+@use '../../Styles/colors.scss' as c;
+
+.todo {
+  width: 39.875rem;
+  height: 4.5rem;
+  background: c.$gray-500;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    color: c.$gray-300;
+
+    &:hover {
+      color: c.$red-500;
+      background: c.$gray-400;
+      border-radius: 2px;
+    }
+  }
+
+  & > p {
+    padding: 1rem;
+    color: c.$gray-100;
+  }
+
+  & > input[type='checkbox'] {
+    appearance: none;
+    width: 1.275rem;
+    height: 1rem;
+    border: solid 1px c.$blue-200;
+    border-radius: 100%;
+    transition: 0.2s;
+
+    &:hover {
+      background: c.$blue-600;
+    }
+
+    &:checked {
+      background: c.$purple-200;
+    }
+
+    &:checked::after {
+      content: '';
+      border: solid 1px c.$gray-100;
+      transform: rotate(-145deg);
+    }
+  }
+}
