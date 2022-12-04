@@ -1,8 +1,35 @@
 @use '../../Styles/colors.scss' as c;
 
 .infotodo {
-  width: 46rem;
-  border-bottom: solid 1px c.$gray-300;
+  width: 39.875rem;
   display: flex;
   justify-content: space-between;
+  padding: 1.5625rem 0;
+
+  span {
+    color: c.$gray-200;
+    background: c.$gray-400;
+    border-radius: 42%;
+    padding: 0.13rem 0.51rem;
+  }
+}
+
+.created {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: c.$blue-200;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.done {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: c.$purple-100;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
