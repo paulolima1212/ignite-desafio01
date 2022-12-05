@@ -54,6 +54,7 @@ export function CreateToDo() {
         placeholder='Create new ToDo'
         name='todo'
         ref={todo}
+        required
       />
       <button type='submit'>
         <span>Create</span>
