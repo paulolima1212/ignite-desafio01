@@ -1,4 +1,11 @@
-import { Header, CreateToDo, InfoToDo, NoToDo, ToDo } from '../Components';
+import {
+  Header,
+  CreateToDo,
+  InfoToDo,
+  NoToDo,
+  ToDo,
+  Main,
+} from '../Components';
 
 import style from './styles.module.scss';
 
@@ -11,8 +18,7 @@ export function Home() {
           <CreateToDo />
         </div>
         <InfoToDo />
-        {/* <NoToDo /> */}
-        <ToDo />
+        <Main />
       </div>
     </div>
   );
