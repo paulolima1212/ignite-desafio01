@@ -8,7 +8,7 @@ export function Main() {
   const { listToDo } = useToDoContext();
 
   function handleRenderTodos() {
-    if (listToDo) {
+    if (listToDo.length > 0) {
       return listToDo.map((todo) => {
         return (
           <ToDo
