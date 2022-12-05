@@ -47,6 +47,28 @@
   }
 }
 
+.checktodo {
+  display: flex;
+}
+
+.checktodo:checked::before {
+  content: '';
+  height: 0.26rem;
+  border: solid 1px c.$gray-100;
+  background: c.$gray-100;
+  border-radius: 1px;
+  transform: rotate(-45deg) translateY(7.6px) translateX(-1.6px);
+}
+
+.checktodo:checked::after {
+  content: '';
+  height: 0.5rem;
+  background: c.$gray-100;
+  border: solid 1px c.$gray-100;
+  border-radius: 1px;
+  transform: rotate(45deg) translateX(7.3px) translateY(-2.2px);
+}
+
 .contenttodo {
   display: flex;
   flex: 1;

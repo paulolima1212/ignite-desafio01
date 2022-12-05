@@ -76,6 +76,7 @@ export function ToDo({ id, content, isDone }: ToDoType) {
         type='checkbox'
         name='done'
         id='done'
+        className={style.checktodo}
       />
       <div className={style.contenttodo}>
         <p className={done ? style.isdone : style.nodone}>{content}</p>

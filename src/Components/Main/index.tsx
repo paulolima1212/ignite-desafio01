@@ -8,17 +8,19 @@ export function Main() {
   const { listToDo } = useToDoContext();
 
   function handleRenderTodos() {
-    if (listToDo.length > 0) {
-      return listToDo.map((todo) => {
-        return (
-          <ToDo
-            id={todo.id}
-            content={todo.content}
-            isDone={todo.isDone}
-            key={todo.id}
-          />
-        );
-      });
+    if (listToDo) {
+      if (listToDo.length > 0) {
+        return listToDo.map((todo) => {
+          return (
+            <ToDo
+              id={todo.id}
+              content={todo.content}
+              isDone={todo.isDone}
+              key={todo.id}
+            />
+          );
+        });
+      }
     }
 
     return <NoToDo />;

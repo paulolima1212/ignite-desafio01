@@ -40,6 +40,7 @@ export function CreateToDo() {
       setListToDo(listToDos);
       setQuantityToDo(listToDos.length);
     }
+
     setQuantityToDo(listToDos.length);
 
     todo.current!.value = '';
