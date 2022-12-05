@@ -41,6 +41,8 @@ export function CreateToDo() {
       setQuantityToDo(listToDos.length);
     }
     setQuantityToDo(listToDos.length);
+
+    todo.current!.value = '';
   }
 
   return (

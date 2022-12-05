@@ -5,7 +5,8 @@ import { useToDoContext } from '../../Hooks/useToDoContext';
 import style from './styles.module.scss';
 
 export function ToDo({ id, content, isDone }: ToDoType) {
-  const { setListToDo, setDoneToDos, listToDo } = useToDoContext();
+  const { setListToDo, setDoneToDos, listToDo, setQuantityToDo } =
+    useToDoContext();
 
   const [done, setDone] = useState(false);
 
@@ -50,6 +51,17 @@ export function ToDo({ id, content, isDone }: ToDoType) {
     localStorage.setItem('todosList', JSON.stringify(newFilteredList));
 
     setListToDo(newFilteredList);
+
+    setQuantityToDo(newFilteredList.length);
+
+    const doneToDos = newFilteredList.reduce((acc, todo) => {
+      if (todo.isDone) {
+        acc = acc + 1;
+      }
+      return acc;
+    }, 0);
+
+    setDoneToDos(doneToDos);
   }
 
   useEffect(() => {
