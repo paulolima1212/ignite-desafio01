@@ -1,17 +1,22 @@
 import style from './styles.module.scss';
 
-import { ToDo as todos } from '../../Mock/todos';
 import { ToDo } from '../ToDo';
 import { NoToDo } from '../NoToDo';
+import { useToDoContext } from '../../Hooks/useToDoContext';
 
 export function Main() {
-  const existsToDos = todos.length > 0;
+  const { listToDo } = useToDoContext();
 
   function handleRenderTodos() {
-    if (existsToDos) {
-      return todos.map((todo) => {
+    if (listToDo) {
+      return listToDo.map((todo) => {
         return (
-          <ToDo content={todo.content} isDone={todo.isDone} key={todo.id} />
+          <ToDo
+            id={todo.id}
+            content={todo.content}
+            isDone={todo.isDone}
+            key={todo.id}
+          />
         );
       });
     }

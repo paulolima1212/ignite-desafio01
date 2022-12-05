@@ -1,17 +1,12 @@
-import {
-  Header,
-  CreateToDo,
-  InfoToDo,
-  NoToDo,
-  ToDo,
-  Main,
-} from '../Components';
+import { useState } from 'react';
+import { Header, CreateToDo, InfoToDo, Main } from '../Components';
+import { ToDoContextProvider } from '../Context/ToDoContext';
 
 import style from './styles.module.scss';
 
 export function Home() {
   return (
-    <div>
+    <ToDoContextProvider>
       <Header />
       <div className={style.main}>
         <div className={style.createnewtodo}>
@@ -20,6 +15,6 @@ export function Home() {
         <InfoToDo />
         <Main />
       </div>
-    </div>
+    </ToDoContextProvider>
   );
 }
