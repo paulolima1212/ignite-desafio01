@@ -11,7 +11,9 @@ export function InfoToDo() {
       </div>
       <div className={style.done}>
         <strong>Done</strong>
-        <span>{doneToDos}</span>
+        <span>
+          {doneToDos} de {quantityToDo}
+        </span>
       </div>
     </div>
   );

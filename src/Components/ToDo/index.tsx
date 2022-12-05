@@ -1,5 +1,5 @@
 import { Trash } from 'phosphor-react';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useToDoContext } from '../../Hooks/useToDoContext';
 
 import style from './styles.module.scss';
@@ -8,6 +8,8 @@ export function ToDo({ id, content, isDone }: ToDoType) {
   const { setListToDo, setDoneToDos, listToDo } = useToDoContext();
 
   const [done, setDone] = useState(false);
+
+  const buttonDelete = useRef<HTMLButtonElement>(null);
 
   function handleChangeToDo(event: ChangeEvent<HTMLInputElement>) {
     const todoID = event.target.parentElement?.id;
@@ -40,6 +42,16 @@ export function ToDo({ id, content, isDone }: ToDoType) {
     setDone((prev) => !prev);
   }
 
+  function handleDeleteToDo() {
+    const idToDo = buttonDelete.current?.parentElement!.id;
+
+    const newFilteredList = listToDo.filter((todo) => todo.id !== idToDo);
+
+    localStorage.setItem('todosList', JSON.stringify(newFilteredList));
+
+    setListToDo(newFilteredList);
+  }
+
   useEffect(() => {
     setDone(isDone);
   }, []);
@@ -56,7 +68,9 @@ export function ToDo({ id, content, isDone }: ToDoType) {
       <div className={style.contenttodo}>
         <p className={done ? style.isdone : style.nodone}>{content}</p>
       </div>
-      <Trash size={24} />
+      <button ref={buttonDelete} onClick={handleDeleteToDo}>
+        <Trash size={24} />
+      </button>
     </div>
   );
 }

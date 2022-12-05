@@ -10,7 +10,14 @@
   align-items: center;
   justify-content: space-between;
 
-  & > svg {
+  & > button {
+    background: transparent;
+    line-height: 0;
+    border: none;
+    cursor: pointer;
+  }
+
+  & > button > svg {
     color: c.$gray-300;
 
     &:hover {
